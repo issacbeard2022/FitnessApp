@@ -9,6 +9,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class PostPageWidget extends StatefulWidget {
   PostPageWidget({Key key}) : super(key: key);
@@ -225,7 +226,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
               options: FFButtonOptions(
                 width: 270,
                 height: 60,
-                color: Color(0xFF4B39EF),
+                color: Colors.black,
                 textStyle: FlutterFlowTheme.subtitle2.override(
                   fontFamily: 'Lexend Deca',
                   color: Colors.white,

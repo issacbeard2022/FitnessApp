@@ -2,13 +2,13 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'auth/firebase_user_provider.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
-import 'package:isacc_beard_p_o_c_i_i/home_page/home_page_widget.dart';
+import 'package:isacc_beard_p_o_c_i_i/signup_page4/signup_page4_widget.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'home_page/home_page_widget.dart';
 import 'workout_video_page/workout_video_page_widget.dart';
-import 'post_page/post_page_widget.dart';
 import 'notifications_page/notifications_page_widget.dart';
+import 'post_page/post_page_widget.dart';
 import 'search_page/search_page_widget.dart';
 import 'profile_page/profile_page_widget.dart';
 import 'signup_page4/signup_page4_widget.dart';
@@ -42,18 +42,18 @@ class _MyAppState extends State<MyApp> {
       title: 'Isacc Beard POC II',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: initialUser == null
-          ? const Center(
-              child: SizedBox(
-                width: 50,
-                height: 50,
-                child: CircularProgressIndicator(
-                  color: FlutterFlowTheme.primaryColor,
+          ? Center(
+              child: Builder(
+                builder: (context) => Image.asset(
+                  'assets/images/photo-1574680178050-55c6a6a96e0a.jfif',
+                  width: MediaQuery.of(context).size.width / 2,
+                  fit: BoxFit.fitWidth,
                 ),
               ),
             )
           : currentUser.loggedIn
               ? NavBarPage()
-              : HomePageWidget(),
+              : SignupPage4Widget(),
     );
   }
 }
@@ -69,7 +69,7 @@ class NavBarPage extends StatefulWidget {
 
 /// This is the private State class that goes with NavBarPage.
 class _NavBarPageState extends State<NavBarPage> {
-  String _currentPage = 'SignupPage4';
+  String _currentPage = 'HomePage';
 
   @override
   void initState() {
@@ -82,8 +82,8 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'HomePage': HomePageWidget(),
       'WorkoutVideoPage': WorkoutVideoPageWidget(),
-      'PostPage': PostPageWidget(),
       'NotificationsPage': NotificationsPageWidget(),
+      'PostPage': PostPageWidget(),
       'SearchPage': SearchPageWidget(),
       'ProfilePage': ProfilePageWidget(),
       'SignupPage4': SignupPage4Widget(),
@@ -107,18 +107,18 @@ class _NavBarPageState extends State<NavBarPage> {
             label: 'Diverse',
           ),
           BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.plusSquare,
-              size: 24,
-            ),
-            label: 'Post',
-          ),
-          BottomNavigationBarItem(
             icon: Icon(
               Icons.favorite,
               size: 24,
             ),
             label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: FaIcon(
+              FontAwesomeIcons.plusSquare,
+              size: 24,
+            ),
+            label: 'Post',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
@@ -145,12 +145,10 @@ class _NavBarPageState extends State<NavBarPage> {
         backgroundColor: Colors.white,
         currentIndex: tabs.keys.toList().indexOf(_currentPage),
         selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.black,
+        unselectedItemColor: Color(0xFF101010),
         onTap: (i) => setState(() => _currentPage = tabs.keys.toList()[i]),
         showSelectedLabels: true,
         showUnselectedLabels: true,
-        // Temporary fix for https://github.com/flutter/flutter/issues/84556
-        unselectedLabelStyle: const TextStyle(fontSize: 0.001),
         type: BottomNavigationBarType.fixed,
       ),
     );

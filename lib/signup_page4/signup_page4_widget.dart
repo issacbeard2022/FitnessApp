@@ -6,6 +6,7 @@ import '../flutter_flow/flutter_flow_widgets.dart';
 import '../main.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 
 class SignupPage4Widget extends StatefulWidget {
   SignupPage4Widget({Key key}) : super(key: key);
@@ -294,7 +295,7 @@ class _SignupPage4WidgetState extends State<SignupPage4Widget>
                                                         builder: (context) =>
                                                             NavBarPage(
                                                                 initialPage:
-                                                                    'SignupPage4'),
+                                                                    'HomePage'),
                                                       ),
                                                       (r) => false,
                                                     );

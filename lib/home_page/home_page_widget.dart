@@ -18,6 +18,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
+      backgroundColor: Colors.transparent,
       body: SafeArea(
         child: Container(
           width: MediaQuery.of(context).size.width,
