@@ -7,9 +7,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'flutter_flow/flutter_flow_theme.dart';
 import 'home_page/home_page_widget.dart';
 import 'workout_video_page/workout_video_page_widget.dart';
-import 'notifications_page/notifications_page_widget.dart';
+import 'activity_copy/activity_copy_widget.dart';
 import 'post_page/post_page_widget.dart';
-import 'search_page/search_page_widget.dart';
 import 'profile_page/profile_page_widget.dart';
 import 'signup_page4/signup_page4_widget.dart';
 
@@ -45,7 +44,7 @@ class _MyAppState extends State<MyApp> {
           ? Center(
               child: Builder(
                 builder: (context) => Image.asset(
-                  'assets/images/photo-1574680178050-55c6a6a96e0a.jfif',
+                  'assets/images/fitness.PNG',
                   width: MediaQuery.of(context).size.width / 2,
                   fit: BoxFit.fitWidth,
                 ),
@@ -82,9 +81,8 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'HomePage': HomePageWidget(),
       'WorkoutVideoPage': WorkoutVideoPageWidget(),
-      'NotificationsPage': NotificationsPageWidget(),
+      'ActivityCopy': ActivityCopyWidget(),
       'PostPage': PostPageWidget(),
-      'SearchPage': SearchPageWidget(),
       'ProfilePage': ProfilePageWidget(),
       'SignupPage4': SignupPage4Widget(),
     };
@@ -111,7 +109,7 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.favorite,
               size: 24,
             ),
-            label: 'Home',
+            label: 'Acivity',
           ),
           BottomNavigationBarItem(
             icon: FaIcon(
@@ -119,13 +117,6 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24,
             ),
             label: 'Post',
-          ),
-          BottomNavigationBarItem(
-            icon: FaIcon(
-              FontAwesomeIcons.search,
-              size: 24,
-            ),
-            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(

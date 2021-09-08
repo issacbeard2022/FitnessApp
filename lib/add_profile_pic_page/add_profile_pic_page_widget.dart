@@ -1,27 +1,22 @@
 import '../backend/firebase_storage/storage.dart';
-import '../flutter_flow/flutter_flow_place_picker.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import '../flutter_flow/flutter_flow_widgets.dart';
-import '../flutter_flow/place.dart';
 import '../flutter_flow/upload_media.dart';
-import '../main.dart';
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PostPageWidget extends StatefulWidget {
-  PostPageWidget({Key key}) : super(key: key);
+class AddProfilePicPageWidget extends StatefulWidget {
+  AddProfilePicPageWidget({Key key}) : super(key: key);
 
   @override
-  _PostPageWidgetState createState() => _PostPageWidgetState();
+  _AddProfilePicPageWidgetState createState() =>
+      _AddProfilePicPageWidgetState();
 }
 
-class _PostPageWidgetState extends State<PostPageWidget> {
+class _AddProfilePicPageWidgetState extends State<AddProfilePicPageWidget> {
   String uploadedFileUrl = '';
   TextEditingController textController;
-  var placePickerValue = FFPlace();
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -36,32 +31,22 @@ class _PostPageWidgetState extends State<PostPageWidget> {
       key: scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
-        title: Text(
-          'Create Post',
-          style: FlutterFlowTheme.title2.override(
-            fontFamily: 'Lexend Deca',
-            color: Color(0xFF090F13),
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
+        iconTheme: IconThemeData(color: Color(0xFF010000)),
+        automaticallyImplyLeading: true,
+        title: Align(
+          alignment: Alignment(-0.05, 0),
+          child: Text(
+            'Add Profile Picture',
+            textAlign: TextAlign.center,
+            style: FlutterFlowTheme.title2.override(
+              fontFamily: 'Roboto',
+              color: Color(0xFF020202),
+              fontSize: 24,
+              fontWeight: FontWeight.w800,
+            ),
           ),
         ),
-        actions: [
-          Padding(
-            padding: EdgeInsets.fromLTRB(0, 0, 12, 0),
-            child: IconButton(
-              onPressed: () async {
-                Navigator.pop(context);
-              },
-              icon: Icon(
-                Icons.close_rounded,
-                color: Color(0xFF95A1AC),
-                size: 30,
-              ),
-              iconSize: 30,
-            ),
-          )
-        ],
+        actions: [],
         centerTitle: false,
         elevation: 0,
       ),
@@ -142,7 +127,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                 controller: textController,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  hintText: 'Comment....',
+                                  hintText: 'Biography...',
                                   hintStyle:
                                       FlutterFlowTheme.bodyText2.override(
                                     fontFamily: 'Lexend Deca',
@@ -152,14 +137,14 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                                   ),
                                   enabledBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0xFFDBE2E7),
+                                      color: Colors.black,
                                       width: 2,
                                     ),
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0xFFDBE2E7),
+                                      color: Colors.black,
                                       width: 2,
                                     ),
                                     borderRadius: BorderRadius.circular(8),
@@ -187,48 +172,12 @@ class _PostPageWidgetState extends State<PostPageWidget> {
             ],
           ),
           Padding(
-            padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
-            child: FlutterFlowPlacePicker(
-              iOSGoogleMapsApiKey: '',
-              androidGoogleMapsApiKey: '',
-              webGoogleMapsApiKey: '',
-              onSelect: (place) => setState(() => placePickerValue = place),
-              defaultText: 'Tag Location',
-              icon: Icon(
-                Icons.place,
-                color: Color(0xFF95A1AC),
-                size: 16,
-              ),
-              buttonOptions: FFButtonOptions(
-                width: double.infinity,
-                height: 50,
-                color: Colors.white,
-                textStyle: FlutterFlowTheme.subtitle2.override(
-                  fontFamily: 'Lexend Deca',
-                  color: Color(0xFF95A1AC),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w500,
-                ),
-                borderSide: BorderSide(
-                  color: Color(0xFFDBE2E7),
-                  width: 2,
-                ),
-                borderRadius: 8,
-              ),
-            ),
-          ),
-          Padding(
             padding: EdgeInsets.fromLTRB(0, 16, 0, 0),
             child: FFButtonWidget(
-              onPressed: () async {
-                await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => NavBarPage(initialPage: 'HomePage'),
-                  ),
-                );
+              onPressed: () {
+                print('Button pressed ...');
               },
-              text: 'Create Post',
+              text: 'Upload',
               options: FFButtonOptions(
                 width: 270,
                 height: 60,
@@ -241,7 +190,7 @@ class _PostPageWidgetState extends State<PostPageWidget> {
                 ),
                 elevation: 3,
                 borderSide: BorderSide(
-                  color: Colors.transparent,
+                  color: Colors.black,
                   width: 1,
                 ),
                 borderRadius: 8,

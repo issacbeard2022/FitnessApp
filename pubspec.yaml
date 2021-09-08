@@ -29,6 +29,7 @@ dependencies:
   cached_network_image: ^3.1.0
   chewie: ^1.0.0
   cloud_firestore: ^2.4.0
+  dash_chat:
   firebase_auth: ^3.0.1
   firebase_core: ^1.4.0
   firebase_storage: ^10.0.1
@@ -43,6 +44,7 @@ dependencies:
   mime_type: ^1.0.0
   page_transition:
   rxdart: ^0.26.0
+  share_plus: ^2.1.4
   sign_in_with_apple: ^3.0.0
   timeago:
   url_launcher:
@@ -65,7 +67,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: 'assets/images/fitness.PNG'
+  image_path: 'assets/images/app_launcher_icon.PNG'
 
 
 # For information on the generic Dart part of this file, see the

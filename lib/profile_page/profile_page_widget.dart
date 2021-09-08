@@ -185,11 +185,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                     child: Align(
                                       alignment: Alignment(0.05, -1),
                                       child: Text(
-                                        'Followers',
+                                        'Influencers',
                                         style:
                                             FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'Roboto',
-                                          fontSize: 16,
+                                          fontSize: 15,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),
@@ -206,11 +206,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                     child: Align(
                                       alignment: Alignment(0.05, -1),
                                       child: Text(
-                                        'Following',
+                                        'Influencing',
                                         style:
                                             FlutterFlowTheme.bodyText1.override(
                                           fontFamily: 'Roboto',
-                                          fontSize: 16,
+                                          fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                         ),
                                       ),

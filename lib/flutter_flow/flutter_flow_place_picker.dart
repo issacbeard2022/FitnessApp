@@ -38,6 +38,9 @@ class _FFPlacePickerState extends State<FlutterFlowPlacePicker> {
   String _selectedPlace;
 
   String get googleMapsApiKey {
+    if (kIsWeb) {
+      return widget.webGoogleMapsApiKey;
+    }
     switch (defaultTargetPlatform) {
       case TargetPlatform.macOS:
       case TargetPlatform.windows:
